@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    background: #2dc653;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    float: left;
+}
+
+.logo h2 {
+    color: black;
+    font-size: 24px;
+    font-style: italic;
+}
+
+.nav-menu {
+    float: right;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    margin-left: 40px;
+    font-size: 18px;
+}
+
+/* Home */
+.home-section {
+    background: black;
+    color: white;
+    height: 600px;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.home-title {
+    font-size: 60px;
+}
+
+/* About */
+.about-section {
+    background: black;
+    color: white;
+    padding: 50px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 50px;
+    color: #2dc653;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    width: 100%;
+}
+
+.about-image {
+    float: left;
+    width: 300px;
+    margin-right: 50px;
+}
+
+.image-placeholder {
+    width: 280px;
+    height: 360px;
+    background: #2dc653;
+    border-radius: 15px;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    line-height: 360px;
+}
+
+.about-text {
+    float: left;
+    width: 800px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Projects */
+.projects-section {
+    background: #e0e0e0;
+    padding: 50px 20px;
+}
+
+.projects-section .section-title {
+    color: black;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-content {
+    width: 100%;
+}
+
+.projects-list {
+    float: left;
+    width: 600px;
+    margin-right: 50px;
+}
+
+.project-item {
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.project-name {
+    float: left;
+    font-size: 20px;
+}
+
+.project-arrow {
+    float: right;
+    color: #7b68ee;
+    font-size: 20px;
+}
+
+.projects-image {
+    float: right;
+    width: 500px;
+}
+
+.projects-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Achievements */
+.achievements-section {
+    background: black;
+    color: white;
+    padding: 50px 20px;
+}
+
+.achievements-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.achievement-item {
+    margin-bottom: 30px;
+}
+
+.achievement-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.achievement-details {
+    margin-left: 25px;
+}
+
+.achievement-details p {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* Contact */
+.contact-section {
+    background: #e0e0e0;
+    
+}
+
+.contact-section .section-title {
+    color: black;
+}
+
+.contact-container {
+   
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: black;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    float: left;
+    width: 120px;
+    color: white;
+    font-size: 18px;
+    padding-top: 8px;
+}
+
+.form-input {
+    float: right;
+    width: 400px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+}
+
+.form-input-small {
+    float: right;
+    width: 200px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+}
+
+.form-textarea {
+    float: right;
+    width: 400px;
+    height: 80px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+}
+
+.submit-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+/* Social Links */
+.social-links {
+    background: #2dc653;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-link {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+/* Clear floats */
+.header::after,
+.about-content::after,
+.projects-content::after,
+.project-item::after,
+.form-row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
