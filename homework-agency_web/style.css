@@ -1,0 +1,895 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #18191F;
+    background-color: #F5F7FA;
+
+}
+
+.container {
+    max-width: 1440px;
+
+}
+
+/* Header */
+.header {
+    max-width: 1440;
+
+    padding-right: 144px;
+
+    padding-left: 144px;
+    background: #F5F7FA;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1440;
+    padding-right: 144px;
+
+    padding-left: 144px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 154.49px;
+    height: 24px;
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #18191F;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #4CAF4F;
+}
+
+.signup-btn {
+    background: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn {
+    background: ;
+    color: #4CAF4F;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: #43A047;
+}
+
+/* Hero Section */
+.hero {
+    opacity: 1;
+    gap: 104px;
+    background: #F5F7FA;
+    max-width: 1440;
+
+    padding-top: 96px;
+    padding-right: 144px;
+    padding-bottom: 96px;
+    padding-left: 144px;
+
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #4D4D4D;
+}
+
+.text-green {
+    color: #4CAF4F;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: #717171;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.cta-btn {
+    background: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #43A047;
+}
+
+.hero-image {
+    flex: 1;
+    width: 391;
+    height: 407;
+    opacity: 1;
+
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Clients Section */
+.clients {
+    background: white;
+    max-width: 1440;
+    height: 190;
+    opacity: 1;
+    gap: 16px;
+    padding: 40px 144px;
+
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #4D4D4D;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #717171;
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.clients-logos img {
+    height: 48px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.clients-logos img:hover {
+    opacity: 1;
+}
+
+/* Community Section */
+.community {
+    max-width: 1440;
+    height: 416;
+    gap: 16px;
+    opacity: 1;
+    padding: 0px 144px;
+
+}
+
+.community .section-header {
+    margin-bottom: 16px;
+}
+
+.community-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    margin-top: 16px;
+}
+
+.community-card {
+    text-align: center;
+    padding: 24px;
+}
+
+.card-icon {
+    width: 65px;
+    height: 56px;
+    margin: 0 auto 16px;
+    background: #E8F5E8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4D4D4D;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #717171;
+    line-height: 1.4;
+}
+
+/* Pixelgrade Section */
+.pixelgrade {
+    padding: 40px 0;
+    background: white;
+}
+
+.pixelgrade-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.pixelgrade-image {
+    flex: 1;
+}
+
+.pixelgrade-image img {
+    width: 100%;
+    height: auto;
+}
+
+.pixelgrade-text {
+    flex: 1;
+}
+
+.pixelgrade-text .section-title {
+    font-size: 36px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.section-description {
+    font-size: 14px;
+    color: #717171;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.learn-more-btn {
+    background: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background: #43A047;
+}
+
+/* Stats Section */
+.stats {
+    padding: 64px 0;
+    background: #F5F7FA;
+}
+
+.stats-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.stats-text {
+    flex: 1;
+}
+
+.stats-text .section-title {
+    font-size: 36px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.stats-text .section-subtitle {
+    font-size: 16px;
+}
+
+.stats-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    background: #E8F5E8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4D4D4D;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #717171;
+}
+
+/* Design Section */
+.design {
+    padding: 40px 0;
+    background: white;
+}
+
+.design-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.design-image {
+    flex: 1;
+}
+
+.design-image img {
+    width: 100%;
+    height: auto;
+}
+
+.design-text {
+    flex: 1;
+}
+
+.design-text .section-title {
+    font-size: 36px;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+/* Tesla Section */
+.tesla {
+    padding: 32px 0;
+    background: #F5F7FA;
+}
+
+.tesla-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.tesla-image {
+    flex: 0 0 326px;
+}
+
+.tesla-image img {
+    width: 100%;
+    height: auto;
+    background: #263238;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.tesla-text {
+    flex: 1;
+}
+
+.tesla-quote {
+    font-size: 16px;
+    color: #717171;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    font-style: italic;
+}
+
+.tesla-author {
+    margin-bottom: 32px;
+}
+
+.author-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4CAF4F;
+    margin-bottom: 4px;
+}
+
+.author-title {
+    font-size: 16px;
+    color: #717171;
+}
+
+.tesla-clients {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.tesla-clients img {
+    height: 48px;
+    opacity: 0.7;
+}
+
+.meet-clients {
+    color: #4CAF4F;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Marketing Section */
+.marketing {
+    padding: 40px 0;
+    background: white;
+}
+
+.marketing .section-header {
+    margin-bottom: 16px;
+}
+
+.marketing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.marketing-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(171, 190, 209, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.marketing-card:hover {
+    transform: translateY(-4px);
+}
+
+.marketing-card img {
+    width: 100%;
+    height: 286px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 16px;
+    background: #F5F7FA;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    position: relative;
+    top: -20px;
+    margin: 0 16px;
+}
+
+.marketing-card .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #717171;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.read-more {
+    color: #4CAF4F;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* CTA Section */
+.cta {
+    padding: 32px 0;
+    background: #F5F7FA;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 64px;
+    font-weight: 600;
+    color: #263238;
+    margin-bottom: 32px;
+    line-height: 1.2;
+}
+
+.cta .cta-btn {
+    background: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta .cta-btn:hover {
+    background: #43A047;
+}
+
+/* Footer */
+.footer {
+
+    background: #263238;
+    color: white;
+
+}
+
+.footer-content {
+    display: flex;
+    gap: 125px;
+}
+
+.footer-brand {
+    flex: 1;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    width: 154.49px;
+    height: 24px;
+    opacity: 1;
+}
+
+.footer-description {
+    font-size: 14px;
+    color: #F5F7FA;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.social-links img {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-column {
+    min-width: 160px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #4CAF4F;
+}
+
+.newsletter {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 14px;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-btn {
+    background: #4CAF4F;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #43A047;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .hero-content,
+    .pixelgrade-content,
+    .design-content,
+    .stats-content,
+    .tesla-content {
+        gap: 40px;
+    }
+
+    .community-cards {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .cta-title {
+        font-size: 48px;
+    }
+
+    .community-cards {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .marketing-cards {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-content {
+        gap: 60px;
+    }
+
+    .footer-links {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero {
+        padding: 140px 0 80px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .pixelgrade-content,
+    .design-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .stats-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .tesla-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .tesla-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .tesla-clients {
+        justify-content: center;
+    }
+
+    .cta-title {
+        font-size: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .cta-title {
+        font-size: 28px;
+    }
+
+    .marketing-card .card-title {
+        font-size: 16px;
+    }
+
+    .tesla-clients {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .clients-logos {
+        justify-content: center;
+        gap: 20px;
+    }
+}
