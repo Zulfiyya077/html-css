@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +10,15 @@ body {
     line-height: 1.6;
     color: #18191F;
     background-color: #F5F7FA;
+    width: 100%;
 }
 
 /* Container */
 .container {
     max-width: 1440px;
     padding: 0 100px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Header Styles */
@@ -44,15 +48,167 @@ body {
     height: 24px;
 }
 
-/* Navigation Menu */
-.nav-menu {
+/* ===== HAMBURGER MENU STYLES ===== */
+
+/* Hamburger Menu Container */
+.hamburger-menu {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Checkbox gizli */
+.hamburger-checkbox {
+    display: none;
+}
+
+/* Hamburger Label (Button) */
+.hamburger-label {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    gap: 4px;
+    width: 40px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hamburger Lines */
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: #4CAF4F;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+    display: block;
+}
+
+/* Hamburger Animation - X şəkli */
+.hamburger-checkbox:checked + .hamburger-label .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-checkbox:checked + .hamburger-label .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-checkbox:checked + .hamburger-label .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menu açıq halı */
+.hamburger-checkbox:checked ~ .mobile-menu {
+    transform: translateX(0);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Mobile Links */
+.mobile-link {
+    text-decoration: none;
+    color: #18191F;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.mobile-link:hover {
+    color: #4CAF4F;
+}
+
+.mobile-link.active {
+    color: #4CAF4F;
+    font-weight: 600;
+}
+
+.mobile-link:last-of-type {
+    border-bottom: none;
+}
+
+/* Mobile Buttons Container */
+.mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Mobile Button Styles */
+.mobile-login-btn,
+.mobile-signup-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #4CAF4F;
+}
+
+.mobile-login-btn {
+    background: transparent;
+    color: #4CAF4F;
+}
+
+.mobile-login-btn:hover {
+    background: #4CAF4F;
+    color: white;
+}
+
+.mobile-signup-btn {
+    background: #4CAF4F;
+    color: white;
+}
+
+.mobile-signup-btn:hover {
+    background: transparent;
+    color: #4CAF4F;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
     display: flex;
     list-style: none;
     gap: 50px;
     margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.nav-link {
+.desktop-nav .nav-link {
     text-decoration: none;
     color: #18191F;
     font-weight: 500;
@@ -61,15 +217,15 @@ body {
     position: relative;
 }
 
-.nav-link:hover {
+.desktop-nav .nav-link:hover {
     color: #4CAF4F;
 }
 
-.nav-link.active {
+.desktop-nav .nav-link.active {
     color: #4CAF4F;
 }
 
-.nav-link.active::after {
+.desktop-nav .nav-link.active::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -79,8 +235,8 @@ body {
     background-color: #4CAF4F;
 }
 
-/* Button Group */
-.btn-group {
+/* Desktop Buttons */
+.desktop-buttons {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -149,7 +305,8 @@ body {
 }
 
 .hero-title {
-    font-size: 60px font-weight: 600;
+    font-size: 64px;
+    font-weight: 600;
     line-height: 76px;
     color: #4D4D4D;
     margin-bottom: 16px;
@@ -180,15 +337,6 @@ body {
 
 .register-btn:hover {
     background-color: #45a049;
-}
-
-.hero-image {
-    width: 657px;
-    height: 276px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero-image img {
@@ -232,7 +380,6 @@ body {
     height: 48px;
     width: 48px;
     transition: opacity 0.3s ease;
-
 }
 
 .client-logo:hover {
@@ -323,10 +470,7 @@ body {
     gap: 48px;
 }
 
-
-
 .unlock-text {
-
     max-width: 601px;
 }
 
@@ -444,7 +588,6 @@ body {
 .calendar-section {
     padding: 48px 0;
     background: #FFFFFF;
-
 }
 
 .calendar-content {
@@ -455,7 +598,6 @@ body {
 }
 
 .calendar-image {
-
     display: flex;
     justify-content: flex-start;
     gap: 16px;
@@ -545,10 +687,13 @@ body {
 .community-updates-section {
     padding: 48px 0;
     background: #FFFFFF;
+    width: 100%;
 }
 
 .community-updates-content {
     text-align: center;
+    width: 100%;
+    max-width: 100%;
 }
 
 .community-updates-title {
@@ -572,12 +717,18 @@ body {
 .community-cards {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 24px;
-    margin-top: 48px;
+    margin: 48px 0 0 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .community-card {
     width: 368px;
+    max-width: 368px;
     height: 366px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -601,10 +752,11 @@ body {
     border-radius: 8px;
     margin: 16px;
     position: relative;
-    top: -96px;
+    bottom: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: calc(100% - 32px);
 }
 
 .card-title {
@@ -784,6 +936,8 @@ body {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     font-size: 14px;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .newsletter-input::placeholder {
@@ -799,861 +953,1048 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px;
+    flex-shrink: 0;
+    min-width: 50px;
 }
 
 .newsletter-btn:hover {
     background-color: #45a049;
 }
 
-/* RESPONSIVE DESIGN */
+/* ===== RESPONSIVE HAMBURGER MENU ===== */
 
-/* Hamburger Menu - CSS Only Solution */
-.menu-toggle {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 1000;
-    position: relative;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #4CAF4F;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-/* Hamburger Animation */
-.menu-toggle:checked+.hamburger span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-toggle:checked+.hamburger span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle:checked+.hamburger span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Updated Mobile Navigation */
-@media (max-width: 900px) {
-
-    /* Show hamburger menu */
-    .hamburger {
+/* 1030px və aşağı - Hamburger menu aktiv */
+@media (max-width: 1030px) {
+    
+    /* Hamburger button göstər */
+    .hamburger-label {
         display: flex;
     }
-
-    /* Hide desktop menu by default */
-    .nav-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #FFFFFF;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        gap: 30px;
-    }
-
-    /* Show menu when checkbox is checked */
-    .menu-toggle:checked~.nav-menu {
-        display: flex;
-    }
-
-    /* Mobile menu links */
-    .nav-menu .nav-link {
-        font-size: 18px;
-        padding: 15px 0;
-        border-bottom: 1px solid #f0f0f0;
-        width: 80%;
-        text-align: center;
-    }
-
-    /* Hide desktop buttons */
-    .btn-group {
+    
+    /* Desktop navigation gizlət */
+    .desktop-nav {
         display: none;
     }
-
-    /* Show mobile buttons inside menu */
-    .btn-group.mobile {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        gap: 16px;
-        margin-top: 30px;
-    }
-
-    .btn-group.mobile .login-btn,
-    .btn-group.mobile .signup-btn {
-        width: 100%;
-        padding: 14px;
+    
+    /* Desktop buttons gizlət */
+    .desktop-buttons {
+        display: none;
     }
 }
 
-/* Large Desktop - 1440px+ */
-@media (min-width: 1440px) {
+/* ===== 768px - 1030px ARASI RESPONSIVE DIZAYN ===== */
+
+@media (min-width: 768px) and (max-width: 1030px) {
+    
+    /* Container ayarları */
     .container {
-        max-width: 1600px;
-        padding: 0 120px;
-    }
-
-    .btn-group.mobile {
-        display: none;
-    }
-
-    .hero-title {
-        font-size: 72px;
-        line-height: 84px;
-    }
-
-    .cta-title {
-        font-size: 72px;
-        line-height: 84px;
-    }
-}
-
-
-/* Tablet - 768px to 1023px */
-@media (max-width: 1439px) and (min-width: 768px) {
-    .container {
-        padding: 0 40px;
-    }
-
-    /* Navigation */
-    .nav-menu {
-        gap: 30px;
-    }
-
-    .nav-link {
-        font-size: 15px;
-    }
-
-    .btn-group {
-        gap: 12px;
-    }
-
-    .btn-group.mobile {
-        display: none;
-    }
-
-    .login-btn,
-    .signup-btn {
-        padding: 12px 24px;
-        font-size: 13px;
-    }
-
-    /* Hero Section */
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 48px;
-    }
-
-    .hero-text {
-        width: 100%;
-    }
-
-    .hero-title {
-        font-size: 48px;
-        line-height: 56px;
-    }
-
-    .hero-image {
-        width: 100%;
-        height: 300px;
-    }
-
-    /* Community Features */
-    .community-features {
-        flex-direction: column;
-        gap: 40px;
-        align-items: center;
-    }
-
-    .feature-card {
-        max-width: 400px;
-    }
-
-    /* Unlock Section */
-    .unlock-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .unlock-text {
         max-width: 100%;
-    }
-
-    /* Achievements */
-    .achievements-content {
-        flex-direction: column;
-        gap: 48px;
-    }
-
-    .achievements-stats {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        max-width: 400px;
+        padding: 0 32px;
         margin: 0 auto;
     }
-
-    /* Calendar */
-    .calendar-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .calendar-text {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    /* Customers */
-    .customers-content {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-
-    .customer-avatar {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto;
-    }
-
-    /* Community Cards */
-    .community-cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-    }
-
-    .community-card {
-        width: 350px;
-    }
-
-    /* CTA */
-    .cta-title {
-        font-size: 48px;
-        line-height: 56px;
-    }
-
-    /* Footer */
-    .footer-content {
-        flex-direction: column;
-        gap: 48px;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 40px;
-    }
-}
-
-
-/* Tablet responsive düzeltmesi */
-@media (max-width: 1023px) and (min-width: 901px) {
-    .container {
-        padding: 0 40px;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .community-features {
-        flex-direction: column;
-        gap: 40px;
-        align-items: center;
-    }
-
-    .unlock-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .achievements-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .calendar-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .customers-content {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-
-    .community-cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-}
-
-
-@media (max-width: 900px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    /* Show hamburger menu */
-    .hamburger {
-        display: flex;
-    }
-
-    /* Hide desktop menu by default */
-    .nav-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #FFFFFF;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        gap: 30px;
-    }
-
-    /* Show menu when checkbox is checked */
-    .menu-toggle:checked~.nav-menu {
-        display: flex;
-    }
-
-    /* Mobile menu links */
-    .nav-menu .nav-link {
-        font-size: 18px;
-        padding: 15px 0;
-        border-bottom: 1px solid #f0f0f0;
-        width: 80%;
-        text-align: center;
-        display: block;
-    }
-
-    /* Hide desktop buttons */
-    .btn-group {
-        display: none;
-    }
-
-    /* Show mobile buttons inside menu */
-    .btn-group.mobile {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        gap: 16px;
-        margin-top: 30px;
-    }
-
-    .btn-group.mobile .login-btn,
-    .btn-group.mobile .signup-btn {
-        width: 100%;
-        padding: 14px;
-    }
-
-    /* Content sections düzeltmesi */
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
-    }
-
-    .hero-text {
-        width: 100%;
-        order: 1;
-    }
-
-    .hero-image {
-        width: 100%;
-        height: 200px;
-        order: 2;
-    }
-
-    .hero-title {
-        font-size: 36px;
-        line-height: 44px;
-    }
-
-    /* Community features düzeltmesi */
-    .community-features {
-        flex-direction: column;
-        gap: 32px;
-        align-items: center;
-    }
-
-    .feature-card {
-        max-width: 100%;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Unlock section düzeltmesi */
-    .unlock-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
-    }
-
-    .unlock-text {
-        max-width: 100%;
-        order: 2;
-    }
-
-    .unlock-image {
-        order: 1;
-    }
-
-    /* Achievements section düzeltmesi */
-    .achievements-content {
-        flex-direction: column;
-        gap: 32px;
-        text-align: center;
-    }
-
-    .achievements-stats {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        max-width: 100%;
-    }
-
-    /* Calendar section düzeltmesi */
-    .calendar-content {
-        flex-direction: column;
-        gap: 32px;
-        text-align: center;
-    }
-
-    .calendar-text {
-        max-width: 100%;
-        order: 2;
-    }
-
-    .calendar-image {
-        order: 1;
-    }
-
-    /* Customers section düzeltmesi */
-    .customers-content {
-        flex-direction: column;
-        gap: 32px;
-        text-align: center;
-    }
-
-    /* Community cards düzeltmesi */
-    .community-cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-
-    .community-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    /* Footer düzeltmesi */
-    .footer-content {
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .footer-brand {
-        text-align: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-/* Extra Small Mobile - 320px to 479px */
-@media (max-width: 479px) {
-    .container {
-        padding: 0 12px;
-    }
-
-    /* Header */
-    .navbar {
-        padding: 8px 0;
-    }
-
-    /* Logo very small */
+    
     .logo {
-        width: 80px;
-        height: 13px;
-    }
-
-    /* Hamburger smaller */
-    .hamburger span {
-        width: 20px;
-        height: 2px;
-        margin: 2px 0;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        padding: 24px 0;
-    }
-
-    .hero-title {
-        font-size: 22px;
-        line-height: 28px;
-        margin-bottom: 8px;
-    }
-
-    .hero-description {
-        font-size: 12px;
-        line-height: 16px;
-        margin-bottom: 16px;
-    }
-
-    .hero-image {
-        height: 120px;
-    }
-
-    .hero-image img {
-        width: 80%;
-        height: 80%;
-        max-width: 160px;
-    }
-
-    .register-btn {
-        padding: 8px 20px;
-        font-size: 12px;
-    }
-
-    /* Clients Section */
-    .clients-section {
-        padding: 20px 0;
-    }
-
-    .clients-title {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 6px;
-    }
-
-    .clients-description {
-        font-size: 11px;
-        margin-bottom: 16px;
-    }
-
-    .clients-logos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        max-width: 140px;
-    }
-
-    .client-logo {
-        width: 24px;
-        height: 24px;
-    }
-
-    /* Community Section */
-    .community-section {
-        padding: 20px 0;
-    }
-
-    .community-title {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 6px;
-    }
-
-    .community-description {
-        font-size: 11px;
-        margin-bottom: 20px;
-    }
-
-    .community-features {
-        gap: 20px;
-    }
-
-    .feature-card {
-        max-width: 200px;
-        padding: 12px;
-    }
-
-    .feature-icon {
-        width: 28px;
-        height: 24px;
-        margin-bottom: 12px;
-    }
-
-    .feature-card h3 {
-        font-size: 16px;
-        line-height: 20px;
-        margin-bottom: 6px;
-    }
-
-    .feature-card p {
-        font-size: 10px;
-        line-height: 14px;
-    }
-
-    /* Unlock Section */
-    .unlock-section {
-        padding: 20px 0;
-    }
-
-    .unlock-title {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 8px;
-    }
-
-    .unlock-description {
-        font-size: 10px;
-        line-height: 14px;
-        margin-bottom: 16px;
-    }
-
-    .unlock-image img {
-        max-width: 160px;
-    }
-
-    .learn-more-btn {
-        padding: 8px 20px;
-        font-size: 12px;
-    }
-
-    /* Achievements Section */
-    .achievements-section {
-        padding: 24px 0;
-    }
-
-    .achievements-title {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 6px;
-    }
-
-    .achievements-description {
-        font-size: 11px;
-    }
-
-    .achievements-stats {
-        gap: 16px;
-        max-width: 220px;
-    }
-
-    .stat-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .stat-number {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .stat-label {
-        font-size: 10px;
-    }
-
-    /* Calendar Section */
-    .calendar-section {
-        padding: 20px 0;
-    }
-
-    .calendar-title {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 8px;
-    }
-
-    .calendar-description {
-        font-size: 10px;
-        line-height: 14px;
-        margin-bottom: 16px;
-    }
-
-    .calendar-image img {
-        max-width: 140px;
-    }
-
-    /* Customers Section */
-    .customers-section {
-        padding: 16px 0;
-    }
-
-    .customer-avatar {
-        width: 100px;
-        height: 100px;
-    }
-
-    .customers-quote {
-        font-size: 11px;
-        line-height: 16px;
-        margin-bottom: 12px;
-    }
-
-    .customer-name {
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-    .customer-position {
-        font-size: 10px;
-        line-height: 14px;
-    }
-
-    /* Community Updates Section */
-    .community-updates-section {
-        padding: 20px 0;
-    }
-
-    .community-updates-title {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 6px;
-    }
-
-    .community-updates-description {
-        font-size: 11px;
-        line-height: 16px;
-        margin-bottom: 12px;
-    }
-
-    .community-cards {
-        gap: 16px;
-    }
-
-    .community-card {
-        max-width: 220px;
-        height: 180px;
-    }
-
-    .card-image {
-        height: 100px;
-    }
-
-    .card-content {
-        height: 70px;
-        padding: 8px;
-        top: -40px;
-        margin: 8px;
-    }
-
-    .card-title {
-        font-size: 11px;
-        line-height: 14px;
-        margin-bottom: 4px;
-    }
-
-    .card-link {
-        font-size: 11px;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        padding: 20px 0;
-    }
-
-    .cta-title {
-        font-size: 20px;
-        line-height: 26px;
-        margin-bottom: 16px;
-    }
-
-    .cta-btn {
-        padding: 8px 20px;
-        font-size: 12px;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 24px 0 16px;
-    }
-
-    .footer-content {
-        gap: 20px;
-    }
-
-    .footer-logo {
-        margin-bottom: 16px;
-    }
-
-    .footer-logo img {
-        width: 24px;
+        width: 120px;
         height: 18px;
     }
-
-    .footer-logo span {
-        font-size: 22px;
+    
+    /* HERO SECTION */
+    .hero-section {
+        padding: 64px 0;
     }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+    
+    .hero-text {
+        width: 100%;
+        max-width: none;
+        order: 1;
+    }
+    
+    .hero-title {
+        font-size: 42px;
+        line-height: 50px;
+        margin-bottom: 16px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+        margin-bottom: 24px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        order: 2;
+        margin: 0 auto;
+    }
+    
+    .hero-image img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* CLIENTS SECTION */
+    .clients-section {
+        padding: 32px 0;
+    }
+    
+    .clients-title {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+    
+    .clients-description {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+    
+    .clients-logos {
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .client-logo {
+        height: 40px;
+        width: 40px;
+    }
+    
+    /* COMMUNITY SECTION */
+    .community-section {
+        padding: 40px 0;
+    }
+    
+    .community-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 6px;
+    }
+    
+    .community-description {
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+    
+    .community-features {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+    
+    .feature-card {
+        max-width: 450px;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+    }
+    
+    .feature-icon {
+        width: 56px;
+        height: 48px;
+        margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+    
+    .feature-card p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    /* UNLOCK SECTION */
+    .unlock-section {
+        padding: 40px 0;
+    }
+    
+    .unlock-content {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .unlock-image {
+        order: 1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .unlock-image img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .unlock-text {
+        order: 2;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .unlock-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+    
+    .unlock-description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 24px;
+    }
+    
+    /* ACHIEVEMENTS SECTION */
+    .achievements-section {
+        padding: 48px 0;
+    }
+    
+    .achievements-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .achievements-text {
+        order: 1;
+    }
+    
+    .achievements-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .achievements-description {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    
+    .achievements-stats {
+        order: 2;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .stat-label {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    /* CALENDAR SECTION */
+    .calendar-section {
+        padding: 40px 0;
+    }
+    
+    .calendar-content {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .calendar-image {
+        order: 1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .calendar-image img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .calendar-text {
+        order: 2;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .calendar-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+    
+    .calendar-description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 24px;
+    }
+    
+    /* CUSTOMERS SECTION */
+    .customers-section {
+        padding: 32px 0;
+    }
+    
+    .customers-content {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .customers-image {
+        order: 1;
+    }
+    
+    .customer-avatar {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .customers-text {
+        order: 2;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .customers-quote {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 16px;
+    }
+    
+    .customer-name {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .customer-position {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    /* COMMUNITY UPDATES SECTION */
+    .community-updates-section {
+        padding: 40px 0;
+    }
+    
+    .community-updates-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .community-updates-description {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 16px;
+        max-width: 600px;
+    }
+    
+    .community-cards {
+        flex-direction: column;
+        gap: 24px;
+        margin: 32px 0 0 0;
+        align-items: center;
+    }
+    
+    .community-card {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content {
+        height: auto;
+        padding: 16px;
+        margin: 16px;
+        position: relative;
+        bottom: auto;
+        width: calc(100% - 32px);
+    }
+    
+    .card-title {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 12px;
+    }
+    
+    .card-link {
+        font-size: 16px;
+    }
+    
+    /* CTA SECTION */
+    .cta-section {
+        padding: 32px 0;
+    }
+    
+    .cta-title {
+        font-size: 36px;
+        line-height: 44px;
+        margin-bottom: 24px;
+        max-width: 600px;
+    }
+    
+    .cta-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    
+    /* FOOTER */
+    .footer {
+        padding: 48px 0 24px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        order: 1;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    
+    .footer-logo span {
+        font-size: 28px;
+    }
+    
+    .footer-description {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+    
+    .social-links {
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .footer-links {
+        order: 2;
+        flex-direction: row;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-column {
+        min-width: 150px;
+        text-align: left;
+    }
+    
+    .footer-title {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-column ul li a {
+        font-size: 12px;
+    }
+    
+    .newsletter {
+        max-width: 280px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .newsletter-input {
+        padding: 10px 12px;
+        font-size: 12px;
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+        box-sizing: border-box;
+    }
+    
+    .newsletter-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+        flex-shrink: 0;
+        min-width: 50px;
+    }
+    
+    /* BUTTON ÜMUMI AYARLARI */
+    .register-btn,
+    .learn-more-btn,
+    .cta-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    
+    /* OVERFLOW TƏMİNATI */
+    .hero-content,
+    .clients-content,
+    .community-content,
+    .unlock-content,
+    .achievements-content,
+    .calendar-content,
+    .customers-content,
+    .community-updates-content,
+    .cta-content,
+    .footer-content {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .hero-title,
+    .clients-title,
+    .community-title,
+    .unlock-title,
+    .achievements-title,
+    .calendar-title,
+    .community-updates-title,
+    .cta-title {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .clients-logos,
+    .community-features,
+    .achievements-stats,
+    .community-cards,
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
 
+/* ===== 468px - 768px ARASI RESPONSIVE DIZAYN ===== */
+
+@media (min-width: 468px) and (max-width: 768px) {
+    
+    /* Container ayarları */
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    
+    .logo {
+        width: 110px;
+        height: 16px;
+    }
+    
+    /* Mobile menu adjustments */
+    .mobile-nav {
+        gap: 20px;
+        width: 85%;
+    }
+    
+    .mobile-link {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    
+    .mobile-buttons {
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .mobile-login-btn,
+    .mobile-signup-btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+    
+    .hamburger-line {
+        width: 20px;
+    }
+    
+    /* HERO SECTION */
+    .hero-section {
+        padding: 48px 0;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+    
+    .hero-text {
+        width: 100%;
+        order: 1;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 12px;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .hero-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        order: 2;
+        margin: 0 auto;
+    }
+    
+    .register-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    
+    /* CLIENTS SECTION */
+    .clients-section {
+        padding: 24px 0;
+    }
+    
+    .clients-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 4px;
+    }
+    
+    .clients-description {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .clients-logos {
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .client-logo {
+        height: 32px;
+        width: 32px;
+    }
+    
+    /* COMMUNITY SECTION */
+    .community-section {
+        padding: 32px 0;
+    }
+    
+    .community-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 4px;
+    }
+    
+    .community-description {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+    
+    .community-features {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    
+    .feature-card {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .feature-icon {
+        width: 48px;
+        height: 40px;
+        margin-bottom: 16px;
+    }
+    
+    .feature-card h3 {
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+    
+    .feature-card p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    /* UNLOCK SECTION */
+    .unlock-section {
+        padding: 32px 0;
+    }
+    
+    .unlock-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .unlock-image {
+        order: 1;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .unlock-text {
+        order: 2;
+        max-width: 100%;
+    }
+    
+    .unlock-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+    
+    .unlock-description {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .learn-more-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    
+    /* ACHIEVEMENTS SECTION */
+    .achievements-section {
+        padding: 32px 0;
+    }
+    
+    .achievements-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .achievements-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 6px;
+    }
+    
+    .achievements-description {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    
+    .achievements-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .stat-icon {
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+    }
+    
+    .stat-number {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    
+    /* CALENDAR SECTION */
+    .calendar-section {
+        padding: 32px 0;
+    }
+    
+    .calendar-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .calendar-image {
+        order: 1;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .calendar-text {
+        order: 2;
+        max-width: 100%;
+    }
+    
+    .calendar-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+    
+    .calendar-description {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+    
+    /* CUSTOMERS SECTION */
+    .customers-section {
+        padding: 24px 0;
+    }
+    
+    .customers-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .customer-avatar {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    .customers-text {
+        max-width: 100%;
+    }
+    
+    .customers-quote {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .customer-name {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .customer-position {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    
+    /* COMMUNITY UPDATES SECTION */
+    .community-updates-section {
+        padding: 32px 0;
+    }
+    
+    .community-updates-title {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 6px;
+    }
+    
+    .community-updates-description {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 12px;
+        max-width: 100%;
+    }
+    
+    .community-cards {
+        flex-direction: column;
+        gap: 20px;
+        margin: 24px 0 0 0;
+        align-items: center;
+    }
+    
+    .community-card {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    .card-image {
+        height: 160px;
+    }
+    
+    .card-content {
+        height: auto;
+        padding: 12px;
+        margin: 12px;
+        position: relative;
+        bottom: auto;
+        width: calc(100% - 24px);
+    }
+    
+    .card-title {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .card-link {
+        font-size: 14px;
+    }
+    
+    /* CTA SECTION */
+    .cta-section {
+        padding: 24px 0;
+    }
+    
+    .cta-title {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .cta-btn {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+    
+    /* FOOTER */
+    .footer {
+        padding: 32px 0 16px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .footer-logo img {
+        width: 28px;
+        height: 23px;
+    }
+    
+    .footer-logo span {
+        font-size: 24px;
+    }
+    
     .footer-description {
         font-size: 10px;
         line-height: 14px;
         margin-bottom: 16px;
     }
-
-    .footer-links {
-        gap: 20px;
+    
+    .social-links {
+        justify-content: center;
+        gap: 8px;
     }
-
+    
+    .social-links a {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .social-links img {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer-column {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+    
     .footer-title {
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
-
+    
     .footer-column ul li {
         margin-bottom: 6px;
     }
-
+    
     .footer-column ul li a {
-        font-size: 10px;
+        font-size: 11px;
     }
-
+    
+    .newsletter {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
     .newsletter-input {
         padding: 8px 10px;
         font-size: 11px;
     }
-
+    
     .newsletter-btn {
         padding: 8px 10px;
-        font-size: 11px;
-    }
-
-    /* Mobile buttons */
-    .btn-group.mobile .login-btn,
-    .btn-group.mobile .signup-btn {
-        padding: 8px;
         font-size: 12px;
+        min-width: 40px;
+    }
+}
+
+/* Desktop üçün - 1031px və yuxarı */
+@media (min-width: 1031px) {
+    
+    /* Hamburger menu tamamilə gizlət */
+    .hamburger-label {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: none;
+    }
+    
+    /* Desktop navigation göstər */
+    .desktop-nav {
+        display: flex;
+    }
+    
+    /* Desktop buttons göstər */
+    .desktop-buttons {
+        display: flex;
     }
 }

@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="navbar">
             <div class="container">
@@ -20,34 +19,45 @@
                     <img src="./images/Logo (1).png" alt="Nexcent" class="logo">
                 </div>
 
-                <!-- Hamburger Menu Checkbox (hidden) -->
-                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger-menu">
+                    <input type="checkbox" id="hamburger-toggle" class="hamburger-checkbox">
+                    <label for="hamburger-toggle" class="hamburger-label">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </label>
+                    
+                    <!-- Mobile Menu Overlay -->
+                    <div class="mobile-menu">
+                        <nav class="mobile-nav">
+                            <a href="#home" class="mobile-link active">Home</a>
+                            <a href="#service" class="mobile-link">Service</a>
+                            <a href="#feature" class="mobile-link">Feature</a>
+                            <a href="#product" class="mobile-link">Product</a>
+                            <a href="#testimonial" class="mobile-link">Testimonial</a>
+                            <a href="#faq" class="mobile-link">FAQ</a>
+                            
+                            <div class="mobile-buttons">
+                                <button class="mobile-login-btn">Login</button>
+                                <button class="mobile-signup-btn">Sign up</button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
 
-                <!-- Hamburger Menu Icon -->
-                <label for="menu-toggle" class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-
-                <!-- Navigation Menu -->
-                <ul class="nav-menu">
+                <!-- Desktop Navigation Menu -->
+                <ul class="desktop-nav">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#service" class="nav-link">Service</a></li>
                     <li><a href="#feature" class="nav-link">Feature</a></li>
                     <li><a href="#product" class="nav-link">Product</a></li>
                     <li><a href="#testimonial" class="nav-link">Testimonial</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
-
-                    <!-- Mobile Buttons (inside menu) -->
-                    <div class="btn-group mobile">
-                        <button class="login-btn">Login</button>
-                        <button class="signup-btn">Sign up</button>
-                    </div>
                 </ul>
 
                 <!-- Desktop Action Buttons -->
-                <div class="btn-group">
+                <div class="desktop-buttons">
                     <button class="login-btn">Login</button>
                     <button class="signup-btn">Sign up</button>
                 </div>
