@@ -19,8 +19,23 @@
 // console.log(list.flat()); 
 
 
-var list1 = [7, 9, 0, -2];
-var list2 = [[1], 3];
+// var list1 = [7, 9, 0, -2];
+// var list2 = [[1], 3];
 
-console.log(list1.slice(0, 1)[0]); 
-console.log(list2.slice(0, 1)[0]); 
+// console.log(list1.slice(0, 1)[0]); 
+// console.log(list2.slice(0, 1)[0]); 
+
+
+
+
+var student_list = ["John", "Marry", "Ali", "Sophia"];
+var studentName = "John";
+var result = `${studentName} is ${student_list.includes(studentName) ? "a student" : "not a student"}`;
+console.log(result);
+
+
+var list = [9, 9, 9, 4, 6, 2]
+
+var newList = list.join(" - ");
+
+console.log(newList);
