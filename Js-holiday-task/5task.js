@@ -30,10 +30,10 @@ console.log(countVowels2("javascript is fun"));
 //task2 
 // eded 2ye qaliqsiz bolunurse cut ededddir
 function printEvens(n) {
-    for (let i = 2; i <= n; i+=2) {
-        if (i % 2 === 0) {
-            console.log(i);
-        }
+    for (let i = 2; i <= n; i += 2) {
+
+        console.log(i);
+
     }
 }
 printEvens(10);
