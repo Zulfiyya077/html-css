@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Word Game</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: rgb(238, 249, 250);
+        }
+
+        h1 {
+            color: rgb(101, 90, 251);
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: rgb(12, 51, 151);
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background: rgb(47, 25, 246);
+        }
+
+        p {
+            font-size: 16px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word Guessing Game</h1>
+
+    <button onclick="play()">Start Game</button>
+
+    <script>
+        function play() {
+
+            let words = ['LOVE', 'HAPPY', 'JOY', 'SMILE', 'HEART', 'HUG', 'SWEET', 'CARE', 'DREAM'];
+            let word = words[Math.floor(Math.random() * words.length)];
+
+
+            let letters = '_'.repeat(word.length);
+            let lives = 5;
+            let used = '';
+
+            while (lives > 0 && letters.includes('_')) {
+                let guess = prompt(`${letters} | Lives: ${lives} | Used: ${used} | Letter?`);
+
+                if (!guess) break;
+                guess = guess.toUpperCase();
+
+                if (used.includes(guess)) {
+                    alert('Already used!');
+                } else {
+                    used += guess + ' ';
+
+                    if (word.includes(guess)) {
+
+                        let newLetters = '';
+                        for (let i = 0; i < word.length; i++) {
+                            if (word[i] === guess) {
+                                newLetters += guess;
+                            } else {
+                                newLetters += letters[i];
+                            }
+                        }
+                        letters = newLetters;
+                    } else {
+                        lives--;
+                    }
+                }
+            }
+
+
+            if (letters.includes('_')) {
+                alert(`Lost! Word: ${word}`);
+            } else {
+                alert(`Won! Word: ${word}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
